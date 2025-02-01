@@ -26,25 +26,25 @@ This training consists of:
 / 📁 generative-ai-azure-ml/        - Notebooks, datasets, and resources for Generative AI with Azure Machine Learning
   ├── 📁 datasets/                  - Datasets for projects
   ├── 📁 notebooks/                 - Jupyter notebooks for learning and experimentation
-  ├── 📁 projects/                  - Hands-on projects and exercises
+  ├── 📁 deliverables/              - Hands-on projects and exercises
   ├── 📁 resources/                 - Course notes, references, and helpful links
 
 / 📁 introduction-to-genai/         - Content related to Introduction to Generative AI
   ├── 📁 datasets/                  
   ├── 📁 notebooks/                 
-  ├── 📁 projects/                  
+  ├── 📁 deliverables/                  
   ├── 📁 resources/                 
 
 / 📁 introduction-to-python/        - Content related to Introduction to Python
   ├── 📁 datasets/                  
   ├── 📁 notebooks/                 
-  ├── 📁 projects/                  
+  ├── 📁 deliverables/                  
   ├── 📁 resources/                 
 
 / 📁 prompt-engineering-llms/       - Materials for Prompt Engineering and Fine-tuning LLMs
   ├── 📁 datasets/                  
   ├── 📁 notebooks/                 
-  ├── 📁 projects/                  
+  ├── 📁 deliverables/                  
   ├── 📁 resources/                 
 
 / README.md                         - Overview of this repository
