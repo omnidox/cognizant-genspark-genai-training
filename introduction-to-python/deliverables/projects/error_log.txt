@@ -1,0 +1,3 @@
+2025-02-03 20:48:21,696 - ERROR - ValueError occurred: could not convert string to float: 'f'
+2025-02-03 20:48:25,031 - ERROR - ValueError occurred: could not convert string to float: 'f'
+2025-02-03 20:49:20,824 - ERROR - ZeroDivisionError occurred: float division by zero
