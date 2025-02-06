@@ -2,9 +2,19 @@ from datetime import datetime
 
 # model.py - Study Planner Core Logic (Independent of GUI)
 class StudyPlannerModel:
-    def __init__(self):
-        self.tasks = []  # List of (task_name, priority, deadline)
-        self.scores = {}  # Dictionary: { "Math": [90, 85], "Science": [78, 72] }
+    # def __init__(self):
+        # self.tasks = []  # List of (task_name, priority, deadline)
+        # self.scores = {}  # Dictionary: { "Math": [90, 85], "Science": [78, 72] }
+
+    _instance = None  # Singleton instance
+
+    def __new__(cls, *args, **kwargs):
+        if not cls._instance:
+            cls._instance = super(StudyPlannerModel, cls).__new__(cls)
+            cls._instance.tasks = []  # Keeps tasks persistent
+            cls._instance.scores = {}  # Keeps scores persistent
+        return cls._instance
+
 
     def add_task(self, task_name, priority, deadline):
         """Add a new study task with validation."""
@@ -30,11 +40,27 @@ class StudyPlannerModel:
         return self.tasks
 
     def add_score(self, subject, score):
-        """Add a score for a subject."""
+        """Add a score for a subject with validation."""
+        if not subject.strip():
+            return "Error: Subject name cannot be empty."
+
+        if not isinstance(score, (int, float)) or not (0 <= score <= 100):
+            return "Error: Score must be a number between 0 and 100."
+
         if subject not in self.scores:
             self.scores[subject] = []
         self.scores[subject].append(score)
 
+        return f"Score {score} added for {subject}."  # ✅ Always returns a message
+
+
+    def get_all_scores(self):
+        """Retrieve all subjects and their scores."""
+        return self.scores  # Returns the dictionary {"Math": [90, 85], "Science": [78, 72]}
+
     def get_average_scores(self):
         """Calculate and return the average score for each subject."""
+        if not self.scores:
+            return {}
+
         return {subject: sum(scores) / len(scores) for subject, scores in self.scores.items()}
