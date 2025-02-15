@@ -1,3 +1,14 @@
+# Activate conda env
 conda activate cognizant
 
+# Export conda env to file
 conda env export > environment.yml
+
+# This command creates a new Conda environment using the specifications provided in the `environment.yml` file.
+conda env create -f environment.yml
+
+# Install ipykernel from conda-forge channel
+conda install -c conda-forge ipykernel
+
+# Install and configure a new Jupyter kernel named 'cognizant'
+python -m ipykernel install --user --name=cognizant --display-name "Python (cognizant)"
