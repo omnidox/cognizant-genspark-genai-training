@@ -54,6 +54,81 @@ Since we **confirmed no missing values**, we don’t need imputation.
 
 * * *
 
+## **🔹 Step 3a: Find the relevant features**
+
+You can absolutely **include all possible variables (excluding the target city's values) in `X`**, and then use **feature selection techniques** to determine which predictors are the most useful. This approach allows the model to automatically find the best features without you having to pre-select them manually. 
+
+---
+
+### **✅ Steps for Your Approach**
+1. **Include all features (except for the target variable) in `X`**.
+   - Drop only **MALMO_wind_gust** (since it's your target `y`).
+   - Retain all other variables to let feature selection algorithms pick the best ones.
+
+   ```python
+   # Define features (X) and target (y)
+   X = weather_data.drop(columns=["MALMO_wind_gust"])  # Drop target variable
+   y = weather_data["MALMO_wind_gust"]  # Target: Malmo's wind gust
+   ```
+
+2. **Perform Feature Selection** (to find the most important predictors).
+   - You can use **tree-based models** (like Random Forest) or **Recursive Feature Elimination (RFE)** to rank features.
+   - Example using `RandomForestRegressor` for importance ranking:
+
+     ```python
+     from sklearn.ensemble import RandomForestRegressor
+     import pandas as pd
+
+     # Fit a random forest model to determine feature importance
+     model = RandomForestRegressor(n_estimators=100, random_state=42)
+     model.fit(X, y)
+
+     # Get feature importance scores
+     feature_importances = pd.Series(model.feature_importances_, index=X.columns)
+     feature_importances.sort_values(ascending=False).head(10)  # Show top 10 features
+     ```
+
+3. **Select Top Features & Retrain the Model**
+   - If the model identifies, say, **DRESDEN_wind_speed, DE_BILT_pressure, and BUDAPEST_humidity** as the top contributors, you can retrain using just these features.
+
+4. **Train a Decision Tree Model on the Selected Features**
+   ```python
+   from sklearn.tree import DecisionTreeRegressor
+   from sklearn.model_selection import train_test_split
+   from sklearn.metrics import mean_absolute_error
+
+   # Select top N features (adjust based on feature importance)
+   top_features = feature_importances.nlargest(5).index
+   X_selected = X[top_features]
+
+   # Train/Test Split
+   X_train, X_test, y_train, y_test = train_test_split(X_selected, y, test_size=0.2, random_state=42)
+
+   # Train Decision Tree Regressor
+   tree_model = DecisionTreeRegressor(max_depth=5, random_state=42)
+   tree_model.fit(X_train, y_train)
+
+   # Evaluate Model
+   y_pred = tree_model.predict(X_test)
+   print(f"Mean Absolute Error: {mean_absolute_error(y_test, y_pred)}")
+   ```
+
+---
+
+### **🔥 Why This is a Great Approach**
+✅ **You let the model decide** the most predictive features instead of guessing.  
+✅ **You test all possible relationships** between cities.  
+✅ **You ensure a flexible, data-driven model** that captures weather patterns effectively.  
+
+Would you like to visualize feature importance or decision tree splits? 🌳📊
+
+
+
+***
+
+
+
+
 ## **🔹 Step 3: Define Features (`X`) and Target (`y`)**
 
 Once we choose a target variable (`y`), we will:
