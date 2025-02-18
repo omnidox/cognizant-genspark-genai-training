@@ -48,6 +48,81 @@ Since `MONTH` is cyclical (January → December wraps around), we can represent 
 
 `import numpy as np  weather_data["MONTH_sin"] = np.sin(2 * np.pi * weather_data["MONTH"] / 12) weather_data["MONTH_cos"] = np.cos(2 * np.pi * weather_data["MONTH"] / 12)  # Drop the original MONTH column weather_data.drop(columns=["MONTH"], inplace=True)`
 
+---
+### **2.2b Feature Engineering for `MONTH` (Cyclical Encoding)**
+
+Yes! Since **`MONTH_sin` and `MONTH_cos`** encode the same cyclical information but in different dimensions, we should treat them as a **pair** instead of evaluating their importance separately.
+
+---
+
+### ✅ **How to Keep `MONTH_sin` and `MONTH_cos` Together in Feature Importance**
+To analyze their combined importance, we can:
+1. **Sum their individual importance scores** to treat them as a single feature.
+2. **Compare their individual importance**—if one is high but the other is low, check if they're capturing redundant information.
+3. **Plot them together** to see their relative contribution.
+
+Here’s how you can **combine their importance values**:
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+import pandas as pd
+
+# Fit a random forest model to determine feature importance
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X, y)
+
+# Get feature importance scores
+feature_importances = pd.Series(model.feature_importances_, index=X.columns)
+
+# Combine importance of MONTH_sin and MONTH_cos
+month_importance = feature_importances.get("MONTH_sin", 0) + feature_importances.get("MONTH_cos", 0)
+
+# Add the combined MONTH importance to the feature importance list
+feature_importances["MONTH_combined"] = month_importance
+
+# Remove the individual MONTH_sin and MONTH_cos entries
+feature_importances = feature_importances.drop(["MONTH_sin", "MONTH_cos"], errors="ignore")
+
+# Sort and display top 10 features including the combined MONTH feature
+print(feature_importances.sort_values(ascending=False).head(10))
+```
+
+---
+
+### 📊 **What This Does:**
+✅ Ensures `MONTH_sin` and `MONTH_cos` are treated as a **single feature** when interpreting importance.  
+✅ Avoids **losing information** from only considering one.  
+✅ Helps us see if **seasonality matters** in predicting the target.
+
+---
+
+### 🔥 **Bonus: Visualizing the Impact of `MONTH_sin` and `MONTH_cos`**
+If you want to check if **both `MONTH_sin` and `MONTH_cos` contribute meaningfully**, you can **plot their importance separately** before summing:
+
+```python
+import matplotlib.pyplot as plt
+
+# Extract individual feature importances
+month_features = feature_importances.loc[["MONTH_sin", "MONTH_cos"]]
+
+# Plot
+month_features.plot(kind="barh", color=["blue", "orange"])
+plt.xlabel("Feature Importance Score")
+plt.ylabel("Feature")
+plt.title("Importance of MONTH_sin vs. MONTH_cos")
+plt.show()
+```
+
+---
+
+### 🚀 **Final Thoughts**
+- If **both `MONTH_sin` and `MONTH_cos` have similar importance**, they **work together** and should be treated as a unit.
+- If **one dominates the other**, it may suggest that a single encoding (either `sin` or `cos`) is enough.
+- **If neither ranks high**, seasonality might not be crucial for your problem.
+
+Would you like me to compare this with `mutual_info_regression` results to see if seasonality is relevant? 😊
+
+
 ### **2.3 Check for Missing Values (Already Verified)**
 
 Since we **confirmed no missing values**, we don’t need imputation.
@@ -183,14 +258,54 @@ After training, we evaluate the model's accuracy and performance.
 ### **For Classification:**
 
 
+```
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix 
+import seaborn as sns 
+import matplotlib.pyplot as plt
 
-`from sklearn.metrics import accuracy_score, classification_report, confusion_matrix import seaborn as sns import matplotlib.pyplot as plt  # Predict on test data y_pred = model.predict(X_test)  # Accuracy score accuracy = accuracy_score(y_test, y_pred) print(f"Model Accuracy: {accuracy:.2f}")  # Classification report print(classification_report(y_test, y_pred))  # Confusion Matrix cm = confusion_matrix(y_test, y_pred) plt.figure(figsize=(6,5)) sns.heatmap(cm, annot=True, fmt='d', cmap='Blues') plt.xlabel("Predicted") plt.ylabel("Actual") plt.show()`
+# Predict on test data 
+y_pred = model.predict(X_test)  
 
+# Accuracy score 
+accuracy = accuracy_score(y_test, y_pred) 
+print(f"Model Accuracy: {accuracy:.2f}")  
+
+# Classification report 
+print(classification_report(y_test, y_pred))  
+
+# Confusion Matrix 
+cm = confusion_matrix(y_test, y_pred)
+
+# Plot confusion matrix
+plt.figure(figsize=(6,5))  
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')  
+plt.xlabel("Predicted")  
+plt.ylabel("Actual")  
+plt.show()
+
+
+```
 ### **For Regression (Temperature or Precipitation Forecasting):**
+```
 
 
 
-`from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  # Predict on test data y_pred = model.predict(X_test)  # Compute error metrics mae = mean_absolute_error(y_test, y_pred) mse = mean_squared_error(y_test, y_pred) r2 = r2_score(y_test, y_pred)  print(f"Mean Absolute Error (MAE): {mae:.2f}") print(f"Mean Squared Error (MSE): {mse:.2f}") print(f"R² Score: {r2:.2f}")`
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  
+
+# Predict on test data 
+y_pred = model.predict(X_test)  
+
+# Compute error metrics 
+mae = mean_absolute_error(y_test, y_pred)  
+mse = mean_squared_error(y_test, y_pred)  
+r2 = r2_score(y_test, y_pred)  
+
+print(f"Mean Absolute Error (MAE): {mae:.2f}")  
+print(f"Mean Squared Error (MSE): {mse:.2f}")  
+print(f"R² Score: {r2:.2f}")  
+
+
+```
 
 * * *
 
@@ -275,3 +390,22 @@ Save the model, document results
 -   **Do you want to predict weather conditions (classification)** or **forecast temperature/precipitation (regression)?**
 -   Let me know, and I’ll tailor the approach accordingly! 🚀
 
+* * *
+
+The wind gust speed in a storm varies depending on the storm type and intensity. Here are typical wind gust speeds in **meters per second (m/s)**:
+
+- 🌬 **Strong Breeze (Beaufort 6)**: 10.8 – 13.8 m/s  
+- 💨 **Near Gale (Beaufort 7)**: 13.9 – 17.1 m/s  
+- 🌪 **Gale (Beaufort 8)**: 17.2 – 20.7 m/s  
+- 🌀 **Strong Gale (Beaufort 9)**: 20.8 – 24.4 m/s  
+- 🌊 **Storm (Beaufort 10)**: 24.5 – 28.4 m/s  
+- 🌪 **Violent Storm (Beaufort 11)**: 28.5 – 32.6 m/s  
+- 🌀 **Hurricane (Beaufort 12+)**: 32.7+ m/s  
+  - **Category 1 Hurricane**: 33 – 42 m/s  
+  - **Category 5 Hurricane**: 70+ m/s  
+
+For reference:
+- **Severe thunderstorms** may have wind gusts **>25 m/s**.
+- **Tornadoes** can exceed **100 m/s** in extreme cases.
+
+Would you like a **visualization of wind gust speeds in different storm categories**? 📊
