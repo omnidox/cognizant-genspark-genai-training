@@ -12,3 +12,6 @@ conda install -c conda-forge ipykernel
 
 # Install and configure a new Jupyter kernel named 'cognizant'
 python -m ipykernel install --user --name=cognizant --display-name "Python (cognizant)"
+
+# Find file structure of a specific folder
+tree /F /A > structure.txt
