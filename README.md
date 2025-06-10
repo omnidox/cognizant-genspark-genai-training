@@ -196,9 +196,8 @@ jupyter lab
 ## 📞 Contact & Portfolio Links
 
 **Professional Links**:
-- **GitHub**: [View Complete Portfolio](https://github.com/[username])
-- **LinkedIn**: [Professional Profile](https://linkedin.com/in/[username])
-- **Technical Blog**: [AI Development Insights](https://[blog-url])
+- **GitHub**: [View Complete Portfolio](https://github.com/omnidox)
+- **LinkedIn**: [Professional Profile](https://https://www.linkedin.com/in/rafael-omar-hidalgo)
 
 **Ready for**: GenAI Engineer, ML Engineer, Data Scientist, AI Developer roles
 
