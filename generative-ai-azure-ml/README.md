@@ -7,14 +7,15 @@
 
 ## 🎯 Executive Summary
 
-**Enterprise-grade generative AI training program** demonstrating mastery of cloud-based machine learning solutions using Microsoft Azure. This comprehensive portfolio showcases **end-to-end MLOps implementation**, **production-ready AI deployments**, and **scalable cloud architectures** for real-world business applications.
+**Comprehensive Azure ML portfolio** demonstrating practical expertise in cloud-based machine learning solutions, transformer model fine-tuning, and production deployment. This project showcases **end-to-end ML workflows**, **multi-label classification**, **sentiment analysis**, and **MLOps practices** using Microsoft Azure AI services.
 
 ### 🏆 Key Achievements
-- **Built and deployed** production-ready sentiment analysis application on Azure AI Studio
-- **Implemented MLOps pipelines** with automated training, validation, and deployment
-- **Fine-tuned transformer models** for business-specific NLP tasks using Azure compute resources
-- **Designed scalable cloud architectures** supporting real-time inference and batch processing
-- **Processed 10,000+ Amazon product reviews** with 94%+ accuracy using cloud-optimized models
+- **Developed and deployed** sentiment analysis solutions using Azure AI Studio
+- **Fine-tuned DistilBERT** for multi-label research paper classification across 6 academic domains
+- **Implemented advanced data preprocessing** with intelligent class balancing for imbalanced datasets
+- **Built production-ready** Amazon product review sentiment analysis with star rating prediction
+- **Demonstrated MLOps practices** with model deployment and cloud infrastructure management
+- **Applied Prompt Flow** for advanced AI application development
 
 ---
 
@@ -23,120 +24,135 @@
 ### ☁️ Azure Services
 | Service | Implementation | Business Value |
 |---------|---------------|----------------|
-| **Azure AI Studio** | Model deployment, inference endpoints | Production-ready AI applications |
-| **Azure Machine Learning** | Model training, experiment tracking | Scalable ML workflows |
-| **Azure Cognitive Services** | Pre-built AI APIs integration | Rapid development and deployment |
-| **Azure Data Factory** | ETL pipelines for text data | Automated data processing |
-| **Azure Storage & Data Lake** | Dataset management, versioning | Enterprise data governance |
-| **Azure Monitor** | Performance tracking, logging | Production monitoring and optimization |
+| **Azure AI Studio** | Model deployment and inference endpoints | Scalable AI application hosting |
+| **Azure Machine Learning** | Model training and experiment tracking | Professional ML development environment |
+| **Azure Cognitive Services** | Pre-built AI service integration | Rapid prototyping and development |
+| **Azure Data Factory** | Data pipeline orchestration | Automated data processing workflows |
+| **Azure Storage** | Dataset and model artifact management | Secure, scalable data storage |
 
 ### 🧠 AI/ML Technologies
-- **Transformer Models**: BERT, DistilBERT, GPT integration with Azure OpenAI
-- **Hugging Face Hub**: Model catalog exploration and custom fine-tuning
-- **Prompt Flow**: Advanced prompt engineering and chain-of-thought reasoning
-- **MLOps**: CI/CD pipelines, automated testing, model versioning
-- **Real-time Inference**: Low-latency API endpoints with auto-scaling
+- **Transformer Models**: DistilBERT fine-tuning, LiYuan/amazon-review-sentiment-analysis
+- **Multi-Label Classification**: Advanced techniques for academic paper categorization
+- **Sentiment Analysis**: Star rating prediction (1-5 scale) from text reviews
+- **Hugging Face Ecosystem**: Transformers library, tokenizers, and model hub integration
+- **Data Processing**: Advanced preprocessing pipelines with class balancing strategies
 
-### 💻 Development Tools
-- **Python SDK**: Azure ML Python SDK, Azure CLI integration
+### 💻 Development Environment
+- **Python Ecosystem**: Transformers, PyTorch, scikit-learn, pandas, numpy
 - **Jupyter Notebooks**: Interactive development and experimentation
-- **Git Integration**: Version control with Azure DevOps
-- **REST APIs**: Direct integration with Azure ML services
+- **Azure ML SDK**: Cloud-native machine learning workflows
+- **Kaggle Integration**: Real-world dataset processing and competition methodologies
 
 ---
-
-## 📊 Portfolio Highlights
+## 📊 Project Portfolio
 
 ### 🎯 [Capstone Project: Cloud-Based NLP Sentiment Analysis](./deliverables/capstone_project/)
-**Production-ready sentiment analysis application** processing Amazon product reviews with star-rating predictions (1-5 stars).
+**Production-ready sentiment analysis application** using Azure AI Studio for Amazon product reviews.
 
 **Technical Implementation:**
-- **Model**: Fine-tuned transformer model (LiYuan/amazon-review-sentiment-analysis)
-- **Infrastructure**: Azure AI Studio with auto-scaling compute clusters
-- **Data**: 10,000+ Amazon product reviews with preprocessing pipeline
-- **Performance**: 94%+ accuracy with sub-100ms inference latency
-- **Deployment**: REST API endpoints with Azure API Management
+- **Model**: LiYuan/amazon-review-sentiment-analysis for star rating prediction
+- **Platform**: Azure AI Studio with scalable inference endpoints
+- **Data Processing**: Amazon product review dataset with comprehensive preprocessing
+- **Output**: 1-5 star rating predictions with confidence scores
+- **Architecture**: Cloud-native deployment with REST API integration
 
-### 🏗️ [Module 3: AI Solution Architecture](./deliverables/mod_3/)
-**Enterprise AI solution** demonstrating end-to-end workflow from data ingestion to model deployment.
+### 🔬 [Module 2: Advanced Transformer Fine-Tuning](./deliverables/mod_2/)
+**Multi-label classification system** for academic research paper categorization using Kaggle dataset.
 
 **Key Features:**
-- Real-time sentiment analysis pipeline
-- Automated data preprocessing and feature engineering
-- Model performance monitoring and drift detection
-- Scalable inference architecture supporting 1000+ requests/second
+- **Model**: DistilBERT fine-tuned for multi-label classification
+- **Dataset**: Research paper abstracts across 6 academic domains
+- **Categories**: Computer Science, Physics, Mathematics, Statistics, Quantitative Biology, Quantitative Finance
+- **Innovation**: Advanced class balancing techniques for imbalanced multi-label datasets
+- **Methodology**: Iterative sampling with fairness optimization
 
-### ⚙️ [Module 4: MLOps Implementation](./deliverables/mod_4/)
-**Cloud-based fine-tuning pipeline** with automated model optimization and deployment.
+### 🏗️ [Module 3: AI Solution Development](./deliverables/mod_3/)
+**End-to-end AI solution** for Amazon product review sentiment analysis with production deployment considerations.
+
+**Implementation Highlights:**
+- Real-world dataset processing (Amazon product reviews sample)
+- Data cleaning and preprocessing pipelines
+- Model evaluation and performance optimization
+- Business impact analysis and use case validation
+
+### ⚙️ [Module 4: Model Deployment & MLOps](./deliverables/mod_4/)
+**Azure-based model deployment** demonstrating MLOps practices and cloud infrastructure management.
 
 **MLOps Components:**
-- Automated model training with hyperparameter optimization
-- CI/CD pipelines for model deployment
-- A/B testing framework for model comparison
-- Automated model validation and quality gates
+- Model deployment on Azure infrastructure
+- Endpoint configuration and management
+- Performance monitoring and scaling considerations
+- Cloud resource optimization
 
----
+### 🔧 [Module 5: Advanced AI Applications](./deliverables/mod_5/)
+**Prompt Flow implementation** showcasing next-generation AI application development.
 
-## 📈 Learning Progression & Skills Demonstrated
-
-### 🎓 Module 2: Cloud NLP Fundamentals
-**Skills Gained:**
-- Azure platform setup and resource provisioning
-- Transformer model integration with cloud services
-- Text preprocessing pipelines using Azure ML
-- Cloud-based data management and storage strategies
-
-**Key Deliverable:** [Cloud-integrated NLP implementation](./deliverables/mod_2/) showcasing Azure ML Studio capabilities
-
-### 🎓 Module 3: Model Deployment & Scaling
-**Skills Gained:**
-- Production model deployment on Azure AI Studio
-- Real-time inference endpoint configuration
-- Load balancing and auto-scaling implementation
-- Performance monitoring and optimization
-
-**Key Deliverable:** [Complete AI solution](./deliverables/mod_3/) with Amazon reviews sentiment analysis
-
-### 🎓 Module 4: MLOps & Automation
-**Skills Gained:**
-- CI/CD pipeline development for ML models
-- Automated model training and validation
-- Cloud-based fine-tuning techniques
-- Model versioning and lifecycle management
-
-**Key Deliverable:** [MLOps pipeline](./deliverables/mod_4/) with automated fine-tuning workflows
-
-### 🎓 Module 5: Advanced AI Services
-**Skills Gained:**
-- Prompt Flow design and implementation
+**Advanced Features:**
+- LLM application development using Azure Prompt Flow
 - Advanced prompt engineering techniques
-- Multi-modal AI integration
-- Cognitive services orchestration
-
-**Key Deliverable:** [Prompt Flow implementation](./deliverables/mod_5/) demonstrating advanced AI workflows
+- Multi-step AI workflow orchestration
+- Integration with Azure AI services
 
 ---
+## 📈 Learning Progression & Technical Skills
 
-## 🏗️ Project Architecture
+### 🎓 Module 2: Transformer Fine-Tuning & Multi-Label Classification
+**Skills Demonstrated:**
+- Advanced transformer model architecture understanding
+- Multi-label classification problem formulation
+- Class imbalance handling with innovative balancing techniques
+- Kaggle dataset integration and preprocessing
+- PyTorch and Hugging Face Transformers proficiency
+
+**Technical Highlight:** Implemented sophisticated multi-pass balancing algorithm ensuring fair representation across all academic categories while handling multi-label complexity.
+
+### 🎓 Module 3: Production AI Solution Development
+**Skills Demonstrated:**
+- End-to-end AI solution architecture
+- Real-world data processing and cleaning
+- Amazon product review analysis and feature engineering
+- Performance evaluation and business impact assessment
+
+**Technical Highlight:** Built complete sentiment analysis pipeline from raw Amazon review data to actionable business insights.
+
+### 🎓 Module 4: Cloud Deployment & MLOps
+**Skills Demonstrated:**
+- Azure ML model deployment workflows
+- Cloud infrastructure configuration
+- Model endpoint management and optimization
+- MLOps best practices implementation
+
+**Technical Highlight:** Successfully deployed models to Azure with proper endpoint configuration and monitoring.
+
+### 🎓 Module 5: Advanced AI Application Development
+**Skills Demonstrated:**
+- Prompt Flow development and orchestration
+- Advanced prompt engineering methodologies
+- Multi-service AI application integration
+- Next-generation AI workflow design
+
+**Technical Highlight:** Created sophisticated AI applications using Azure's Prompt Flow for complex multi-step reasoning tasks.
+
+---
+## 🏗️ Technical Architecture
 
 ```mermaid
 graph TB
-    A[Data Sources] --> B[Azure Data Factory]
-    B --> C[Azure Data Lake Storage]
-    C --> D[Azure ML Studio]
-    D --> E[Model Training & Fine-tuning]
-    E --> F[Azure AI Studio]
-    F --> G[Model Deployment]
-    G --> H[REST API Endpoints]
-    H --> I[Client Applications]
+    A[Research Papers/Reviews] --> B[Data Preprocessing]
+    B --> C[Azure ML Studio]
+    C --> D[Model Training & Fine-tuning]
+    D --> E[Model Validation]
+    E --> F[Azure AI Studio Deployment]
+    F --> G[REST API Endpoints]
+    G --> H[Production Applications]
     
-    J[Azure Monitor] --> D
-    J --> F
-    J --> H
+    I[Prompt Flow] --> F
+    J[Azure Storage] --> C
+    K[Monitoring & Logging] --> F
     
-    K[Azure DevOps] --> D
-    K --> F
-    K --> G
+    style D fill:#e1f5fe
+    style F fill:#f3e5f5
+    style H fill:#e8f5e8
 ```
 
 ---
@@ -144,9 +160,9 @@ graph TB
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
-- Azure subscription with AI/ML services enabled
-- Python 3.8+ with Azure ML SDK
-- Jupyter Notebook environment
+- Azure subscription with AI/ML services access
+- Python 3.8+ environment
+- Jupyter Notebook or compatible IDE
 
 ### Setup Instructions
 
@@ -158,7 +174,8 @@ graph TB
 
 2. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install transformers torch datasets scikit-learn pandas numpy matplotlib
+   pip install azure-ai-ml azure-identity
    ```
 
 3. **Configure Azure credentials**
@@ -167,84 +184,103 @@ graph TB
    az account set --subscription <subscription-id>
    ```
 
-4. **Set up Azure ML workspace**
-   ```python
-   from azure.ai.ml import MLClient
-   from azure.identity import DefaultAzureCredential
-   
-   ml_client = MLClient.from_config(credential=DefaultAzureCredential())
-   ```
-
-5. **Run the capstone project**
+4. **Run the capstone project**
    ```bash
    jupyter notebook deliverables/capstone_project/Capstone_Project.ipynb
    ```
 
----
+5. **Explore advanced projects**
+   ```bash
+   # Multi-label classification
+   jupyter notebook deliverables/mod_2/Projects/Implement_Cloud_with_Transformers.ipynb
+   
+   # AI solution development
+   jupyter notebook deliverables/mod_3/projects/Building_an_AI_Solution.ipynb
+   ```
 
+---
 ## 📁 Repository Structure
 
 ```
 generative-ai-azure-ml/
-├── 📊 datasets/                    # Training and evaluation datasets
-├── 🎯 deliverables/               # Core project implementations
-│   ├── 🏆 capstone_project/       # Production-ready NLP application
-│   ├── 📚 mod_2/                  # Azure ML fundamentals & cloud NLP
-│   ├── 🚀 mod_3/                  # Model deployment & AI solutions
-│   ├── ⚙️ mod_4/                   # MLOps & automated fine-tuning
-│   └── 🔬 mod_5/                  # Advanced AI services & Prompt Flow
-├── 📓 notebooks/                  # Development and experimentation
-├── 📖 resources/                  # Documentation and guides
-└── 📋 README.md                   # This file
+├── 🎯 deliverables/                    # Core project implementations
+│   ├── 🏆 capstone_project/           # Azure AI Studio sentiment analysis
+│   │   └── Capstone_Project.ipynb     # Complete implementation guide
+│   ├── 📚 mod_2/                      # Advanced transformer fine-tuning
+│   │   ├── Projects/                  # DistilBERT multi-label classification
+│   │   └── assignments/               # Supporting exercises
+│   ├── 🚀 mod_3/                      # AI solution development
+│   │   ├── projects/                  # Amazon review sentiment analysis
+│   │   └── assignments/               # Related coursework
+│   ├── ⚙️ mod_4/                       # MLOps and deployment
+│   │   ├── projects/                  # Azure model deployment
+│   │   └── assignments/               # Deployment exercises
+│   └── 🔬 mod_5/                      # Advanced AI applications
+│       ├── projects/                  # Prompt Flow implementations
+│       └── assignments/               # Advanced AI exercises
+├── 📊 datasets/                       # Training and evaluation data
+├── 📓 notebooks/                      # Development notebooks
+├── 📖 resources/                      # Documentation and guides
+└── 📋 README.md                       # This file
 ```
 
 ---
 
-## 🎯 Business Impact & Use Cases
+## 🎯 Business Applications & Impact
 
-### 💼 Enterprise Applications
-- **Customer Experience Management**: Automated sentiment analysis for product reviews and feedback
-- **Brand Monitoring**: Real-time social media sentiment tracking and alert systems
-- **Market Research**: Large-scale text analysis for consumer insights and trend identification
-- **Content Moderation**: Automated classification and filtering of user-generated content
+### 💼 Real-World Use Cases
+- **Academic Research Analysis**: Automated categorization of research papers across multiple domains
+- **E-commerce Intelligence**: Product review sentiment analysis for business decision-making
+- **Content Classification**: Multi-label document classification for enterprise content management
+- **Customer Experience**: Automated sentiment tracking and star rating prediction
 
 ### 📈 Technical Achievements
-- **Scalability**: Designed to handle 10,000+ reviews per hour with auto-scaling
-- **Accuracy**: Achieved 94%+ accuracy on Amazon product review sentiment classification
-- **Latency**: Sub-100ms response times for real-time inference
-- **Cost Optimization**: Implemented serverless computing for cost-efficient processing
+- **Multi-Label Expertise**: Successfully handled complex academic domain classification
+- **Data Science Innovation**: Developed advanced class balancing techniques for imbalanced datasets
+- **Cloud Integration**: Practical experience with Azure AI services and deployment
+- **Production Readiness**: Built complete pipelines from data to deployed endpoints
 
 ---
+## 🔧 Advanced Technical Features
 
-## 🔧 Advanced Features Implemented
-
-### 🤖 AI/ML Capabilities
-- **Multi-class Sentiment Analysis**: 5-star rating prediction with confidence scores
-- **Custom Model Fine-tuning**: Domain-specific adaptation of pre-trained transformers
-- **Automated Hyperparameter Optimization**: Azure ML automated tuning workflows
-- **Model Interpretability**: SHAP values and attention visualization for model explainability
+### 🤖 Machine Learning Capabilities
+- **Transformer Architecture**: Deep understanding of attention mechanisms and fine-tuning
+- **Multi-Label Classification**: Advanced techniques for handling multiple simultaneous labels
+- **Sentiment Analysis**: Nuanced star rating prediction with confidence scoring
+- **Data Preprocessing**: Sophisticated pipelines for real-world data cleaning and preparation
 
 ### ☁️ Cloud Infrastructure
-- **Auto-scaling Compute**: Dynamic resource allocation based on demand
-- **High Availability**: Multi-region deployment with failover capabilities
-- **Security**: Azure AD integration with role-based access control
-- **Monitoring**: Comprehensive logging, metrics, and alerting systems
+- **Azure Integration**: Comprehensive use of Azure AI and ML services
+- **Deployment Automation**: Infrastructure-as-code approaches for model deployment
+- **Scalability**: Designed for enterprise-scale AI applications
+- **Monitoring**: Performance tracking and optimization strategies
 
 ---
 
-## 📞 Contact & Collaboration
+## 📞 Professional Relevance
 
-This repository demonstrates enterprise-level cloud AI implementation skills suitable for:
-- **ML Engineer** positions requiring Azure cloud expertise
-- **Data Scientist** roles with MLOps and production deployment experience
-- **Cloud Solution Architect** positions in AI/ML domain
-- **DevOps Engineer** roles with ML pipeline specialization
+This portfolio demonstrates expertise valuable for:
+- **Machine Learning Engineer** positions requiring cloud AI expertise
+- **Data Scientist** roles with production deployment experience
+- **AI/ML Developer** positions in cloud-native environments
+- **MLOps Engineer** roles requiring Azure platform knowledge
+
+**Core Competencies Demonstrated:**
+- Production-ready AI model development and deployment
+- Advanced transformer model fine-tuning and optimization
+- Multi-label classification and complex NLP problem solving
+- Cloud infrastructure management and MLOps practices
+- End-to-end solution architecture and implementation
+
+---
 
 **Portfolio Navigation:**
-- 🏆 **[Capstone Project](./deliverables/capstone_project/README.md)** - Production NLP application
-- 🚀 **[Module Projects](./deliverables/)** - Individual skill demonstrations
-- 📊 **[Technical Documentation](./resources/)** - Architecture and implementation guides
+- 🏆 **[Capstone Project](./deliverables/capstone_project/)** - Azure AI Studio sentiment analysis
+- 🔬 **[Advanced Fine-Tuning](./deliverables/mod_2/Projects/)** - Multi-label DistilBERT implementation
+- 🚀 **[AI Solutions](./deliverables/mod_3/projects/)** - Complete AI application development
+- ⚙️ **[Deployment & MLOps](./deliverables/mod_4/projects/)** - Azure model deployment
+- 🔧 **[Advanced AI Apps](./deliverables/mod_5/projects/)** - Prompt Flow and advanced AI
 
 ---
 
-*This project was completed as part of the Cognizant GenSpark GenAI Training Program, demonstrating practical skills in enterprise cloud AI development and deployment.*
+*This project portfolio was developed as part of the Cognizant GenSpark GenAI Training Program, demonstrating practical skills in enterprise-grade cloud AI development, advanced machine learning techniques, and production deployment methodologies.*
