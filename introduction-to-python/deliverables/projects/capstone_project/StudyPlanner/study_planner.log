@@ -30,3 +30,7 @@ INFO:root:Task Added: mkmk, Priority: 1, Deadline: 2025-02-12
 INFO:root:Task Added: jnjkn, Priority: 5, Deadline: 2025-02-11
 INFO:root:Task Added: jnjkn, Priority: 1, Deadline: 2025-02-10
 INFO:root:Score Added: jnjln - 90.0
+INFO:root:Task Added: dance, Priority: 5, Deadline: 2025-06-10
+INFO:root:Task Added: math, Priority: 3, Deadline: 2025-06-10
+INFO:root:Score Added: Rafael - 25.0
+INFO:root:Score Added: math - 50.0
